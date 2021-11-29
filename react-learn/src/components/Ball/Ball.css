@@ -1,0 +1,7 @@
+.ball {
+  position: fixed;
+  background-color: cadetblue;
+  border-radius: 50%;
+  box-shadow: inset -5px -5px 15px 1px #fff;
+}
+/*# sourceMappingURL=Ball.css.map */

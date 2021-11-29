@@ -1,9 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css'
-import Ball from "./components/Ball/Ball";
+## \<Ball>\</Ball>
 
-
+```js
 ReactDOM.render(
     (
         <>
@@ -15,5 +12,4 @@ ReactDOM.render(
     ),
     document.getElementById('root')
 );
-
-
+```
