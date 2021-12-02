@@ -1,22 +1,32 @@
 import React, {Component} from 'react';
-import PageBtn from "./PageBtn";
-
+import './Pager.css'
 class Pager extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            page: props.page || 1,
-            pageMax: Math.floor((props.total + props.pageSize - 1) / props.pageSize)
-        }
-        this.pages = this.getPages(this.state.page, this.props.pageCount)
+    /**
+     * 添加功能按钮
+     * @param currentNum 当前页码
+     * @param count 页码按钮数量
+     * @returns {(JSX.Element|*)[]}
+     */
+    addFunctions(currentNum, count){
+        return [
+                <span key="prev" className={`page-btn prev`}><span className="icon"></span></span>,
+                this.getPages(currentNum, count),
+                <span key="next" className={`page-btn next`}><span className="icon"></span></span>
+            ]
     }
 
+    // 获取页码元素数组
     getPages(currentNum, count) {
-        let pageArr = this.getNumbers(this.state.page, this.props.pageCount)
-        return pageArr.map((item, index) => <PageBtn key={index} type="number" number={item}></PageBtn>)
+        let pageArr = this.getNumbers(this.props.currentPage, this.props.pageCount)
+        return pageArr.map((item, index) => (
+            <span key={index}
+                  className={`page-btn ${item === this.props.currentPage ? 'active' : ''}`}
+                  onClick={() => this.props.changePage(item)}
+            >{item}</span>
+        ))
     }
 
-
+    // 获取页码数字数组
     getNumbers(currentNum, count, numArr = []) {
         // 当前页码传参丢失
         if (!currentNum) {
@@ -52,11 +62,12 @@ class Pager extends Component {
     }
 
     addRight(currentNum, count) {
+        const pageMax = Math.ceil(this.props.total / this.props.pageSize)
         if (count <= 0) {
             return null
         }
         // 若页码超出当前最大页数，则不在右侧继续添加
-        return currentNum + 1 <= this.state.pageMax ? currentNum + 1 : null
+        return currentNum + 1 <= pageMax ? currentNum + 1 : null
     }
 
     addLeft(currentNum, count) {
@@ -67,10 +78,11 @@ class Pager extends Component {
         return currentNum - 1 > 0 ? currentNum - 1 : null
     }
 
+
     render() {
         return (
             <div>
-                {this.pages}
+                {this.addFunctions(this.props.currentPage, this.props.pageCount)}
             </div>
         );
     }

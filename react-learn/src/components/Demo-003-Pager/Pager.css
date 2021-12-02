@@ -1,0 +1,45 @@
+.page-btn {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 12px 0 12px 0;
+  text-align: center;
+  background-color: #d13559;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 10px 10px;
+  user-select: none;
+  cursor: pointer;
+}
+.page-btn:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #d13559;
+}
+.page-btn.active {
+  background-color: white;
+  color: #d13559;
+}
+.page-btn.prev .icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url("images/icon-left.png");
+  background-size: 100% 100%;
+  transform: scale(1.5);
+}
+.page-btn.prev:hover .icon {
+  background-image: url("images/icon-left-active.png");
+}
+.page-btn.next .icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url("images/icon-right.png");
+  background-size: 100% 100%;
+  transform: scale(1.5);
+}
+.page-btn.next:hover .icon {
+  background-image: url("images/icon-right-active.png");
+}
+/*# sourceMappingURL=Pager.css.map */
