@@ -7,6 +7,8 @@ import PagerContainer from "./components/Demo-003-Pager/PagerContainer";
 ReactDOM.render(
     (
         <>
+            <PagerContainer currentPage={1} pageSize={10} total={0} pageCount={5}></PagerContainer>
+            <PagerContainer currentPage={1} pageSize={10} total={30} pageCount={5}></PagerContainer>
             <PagerContainer currentPage={1} pageSize={10} total={500} pageCount={5}></PagerContainer>
             <PagerContainer currentPage={6} pageSize={10} total={500} pageCount={5}></PagerContainer>
             <PagerContainer currentPage={12} pageSize={10} total={500} pageCount={5}></PagerContainer>

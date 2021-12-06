@@ -12,6 +12,7 @@ class PagerContainer extends Component {
         }
     }
     handlePageChange = (currentPage) => {
+        console.log(currentPage)
         this.setState({
             currentPage: currentPage
         })

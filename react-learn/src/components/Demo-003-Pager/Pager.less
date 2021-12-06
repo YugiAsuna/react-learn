@@ -11,13 +11,17 @@
   margin: 10px 10px;
   user-select: none;
   cursor: pointer;
-  &:hover{
+  &:not(.disabled):hover{
     background-color: rgba(255, 255, 255, 0.85);
     color: #d13559;
   }
   &.active{
     background-color: white;
     color: #d13559;
+  }
+  &.disabled{
+    background-color: #b7b6b6;
+    cursor: not-allowed;
   }
   &.prev{
     .icon{
@@ -28,7 +32,7 @@
       background-size: 100% 100%;
       transform: scale(1.5);
     }
-    &:hover{
+    &:not(.disabled):hover{
       .icon{
         background-image: url("images/icon-left-active.png");
       }
@@ -43,10 +47,15 @@
       background-size: 100% 100%;
       transform: scale(1.5);
     }
-    &:hover{
+    &:not(.disabled):hover{
       .icon{
         background-image: url("images/icon-right-active.png");
       }
     }
+  }
+  &.first,
+  &.last{
+    font-size: 14px;
+    font-weight: normal;
   }
 }
