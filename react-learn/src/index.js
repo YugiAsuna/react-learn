@@ -1,20 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
-import PagerContainer from "./components/Demo-003-Pager/PagerContainer";
-
+import Form from "./components/Demo-005-Form/Form";
 
 ReactDOM.render(
     (
         <>
-            <PagerContainer currentPage={1} pageSize={10} total={0} pageCount={5}></PagerContainer>
-            <PagerContainer currentPage={1} pageSize={10} total={30} pageCount={5}></PagerContainer>
-            <PagerContainer currentPage={1} pageSize={10} total={500} pageCount={5}></PagerContainer>
-            <PagerContainer currentPage={6} pageSize={10} total={500} pageCount={5}></PagerContainer>
-            <PagerContainer currentPage={12} pageSize={10} total={500} pageCount={5}></PagerContainer>
-            <PagerContainer currentPage={10} pageSize={10} total={500} pageCount={10}></PagerContainer>
-            <PagerContainer currentPage={17} pageSize={10} total={500} pageCount={10}></PagerContainer>
-            <PagerContainer currentPage={33} pageSize={10} total={500} pageCount={10}></PagerContainer>
+            <Form></Form>
         </>
     ),
     document.getElementById('root')
